@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blessey e-commerce Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="search" href="search.html">
+    <link rel="collection" href="collection.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        .navbar h1 {
+            margin: 0;
+        }
+
+        .navbar-links,
+        .side-navbar-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .navbar-link a,
+        .side-navbar-link a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .navbar-toggle {
+            display: none;
+        }
+
+        .side-navbar {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 250px;
+            height: 100%;
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .side-navbar.active {
+            transform: translateX(0);
+        }
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        .footer.container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer.box-1 {
+            max-width: 600px;
+        }
+
+        .footer-icon-container i {
+            margin-right: 10px;
+        }
+
+        .contact-box {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            margin: 20px auto;
+        }
+
+        .contact-box h2 {
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        .contact-box .input-group {
+            margin-bottom: 15px;
+        }
+
+        .contact-box .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .contact-box .input-group input,
+        .contact-box .input-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .contact-box .input-group textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        .contact-box .submit-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .contact-box .submit-btn:hover {
+            background-color: #218838;
+        }
+
+        @media (max-width: 768px) {
+            .navbar-links {
+                display: none;
+            }
+
+            .navbar-toggle {
+                display: block;
+                cursor: pointer;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <h1>Bridal Blouse Boutique</h1>
+        <div class="navbar-links">
+            <p class="navbar-link"><a href="index.html">Home</a></p>
+            <p class="navbar-link"><a href="collection.html">Bridal Blouse</a></p>
+            <p class="navbar-link"><a href="contact.html">Contact</a></p>
+        </div>
+        <div class="navbar-toggle" onclick="showNavbar()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+    <div class="side-navbar">
+        <p style="text-align: right;" onclick="closeNavbar()">
+            <i class="fa-solid fa-xmark"></i>
+        </p>
+        <div class="side-navbar-links">
+            <p class="side-navbar-link"><a href="index.html">Home</a></p>
+            <p class="side-navbar-link"><a href="collection.html">Bridal Blouse</a></p>
+            <p class="side-navbar-link"><a href="contact.html">Contact</a></p>
+        </div>
+    </div>
+
+    <div class="contact-box">
+        <h2>Contact Us</h2>
+        <form action="#" method="POST">
+            <div class="input-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Email ID</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="size">Size Details</label>
+                <input type="text" id="size" name="size" required>
+            </div>
+            <div class="input-group">
+                <label for="address">Address</label>
+                <textarea id="address" name="address" required></textarea>
+            </div>
+            <div class="input-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+
+    <div class="footer">
+        <div class="footer container">
+            <div class="footer box-1">
+                <h2 class="heading-text">Boutique</h2>
+                <p>"Connect with us on Instagram and our website for the latest in stunning bridal blouses. Follow our daily posts showcasing new designs and exclusive collections. Our dedicated team is here to help you find the perfect bridal look. Stay updated with the latest trends and shop your dream bridal blouse with ease. We look forward to being a part of your special day!"</p>
+                <div class="footer-icon-container">
+                    <i class="fa-brands fa-instagram" style="color: #ffffff;"></i>
+                    <i class="fa-brands fa-whatsapp" style="color: #ffffff;"></i>
+                    <i class="fa-brands fa-pinterest" style="color: #ffffff;"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function showNavbar() {
+            document.querySelector('.side-navbar').classList.add('active');
+        }
+
+        function closeNavbar() {
+            document.querySelector('.side-navbar').classList.remove('active');
+        }
+    </script>
+    <script src="collection.js"></script>
+    <link rel="contact" href="contact.html">
+</body>
+</html>
